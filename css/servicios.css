@@ -1,0 +1,547 @@
+/*Import font*/
+@import url('https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap');
+
+/*Reset CSS*/
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: "Inter", sans-serif;
+}
+
+/*Color variables*/
+:root{
+    --primary-color: white;
+    --secondary-color: black;
+    --neutral: rgb(36, 36, 36);
+    --neutral2: rgb(61, 61, 61);
+    --neutral-light: rgb(180, 180, 180);
+    --neutral-light2: rgb(220, 220, 220);
+    --link-active: rgba(255, 255, 255, 0.2);    
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+/*Global styles*/
+body{
+    background-color: var(--primary-color);
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    overflow-x: hidden;
+}
+
+/* Contenedor general */
+body {
+  scrollbar-width: thin; /* Para Firefox */
+  scrollbar-color: var(--secondary-color) var(--neutral); /* Para Firefox */
+}
+
+/* Para Chrome, Edge, Safari */
+::-webkit-scrollbar {
+  width: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: var(--neutral);
+}
+
+::-webkit-scrollbar-thumb {
+  background-color: var(--neutral-light2);
+  border-radius: 10px;
+}
+
+.whatsapp{
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    background-color: var(--primary-color);
+    color: var(--primary-color);
+    padding: 10px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    box-shadow: 0px 5px 10px rgba(0, 0, 0, 0.2);
+    z-index: 99;
+    border-radius: 7px;
+}
+
+.whatsapp svg{
+    width: 35px;
+    height: 35px;
+}
+
+span{
+    background-color: var(--secondary-color);
+    color: var(--primary-color);
+    padding: 0 15px;
+}
+
+h1{
+    font-size: 50px;
+    font-weight: 800;
+    color: var(--secondary-color);
+}
+
+h2{
+    font-size: 40px;
+    font-weight: 800;
+}
+
+a{
+    text-decoration: none;
+    color: var(--secondary-color);
+    cursor: pointer;
+}
+
+a:hover{
+    cursor: pointer;
+}
+
+button{
+    width: 130px;
+    height: 40px;
+    font-weight: 500;
+    font-size: 15px;
+    background-color: var(--secondary-color);
+    color: var(--primary-color);
+    border: none;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+    overflow: hidden;
+    transition-duration: .3s;
+}
+
+button:hover{
+    box-shadow: 0px 5px 10px rgba(0, 0, 0, 0.103);
+}
+
+button::before {
+    width: 130px;
+    height: 130px;
+    position: absolute;
+    content: "";
+    background-color: var(--primary-color);
+    border-radius: 50%;
+    left: -100%;
+    top: 0;
+    transition-duration: .3s;
+    mix-blend-mode: difference;
+}
+
+button:hover::before {
+    transition-duration: .3s;
+    transform: translate(100%,-50%);
+    border-radius: 0;
+}
+
+/*Header*/
+.header-container{
+    position: fixed;
+    width: 100%;
+    height: 100px;
+    background-color: var(--primary-color);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 2;
+    left: 0;
+    top: 0;
+    z-index: 99;
+}
+
+header{
+    width: 70%;
+    height: 100px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    position: fixed;
+    z-index: 99;
+}
+
+header .link-cta{
+    z-index: 99;
+}
+
+#header-container.scrolled {
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+  transition: box-shadow 0.3s ease;
+  z-index: 99;
+}
+
+header svg{
+    display: none;
+    z-index: 99;
+}
+
+header .mobile-logo{
+    display: none;
+    z-index: 99;
+}
+
+header .header-logo{
+    width: 160px;
+    z-index: 99;
+}
+
+header ul{
+    display: flex;
+    z-index: 99;
+}
+
+header ul li{
+    list-style: none;
+    margin: 0 15px;
+    font-weight: 500;
+    cursor: pointer;
+    z-index: 99;
+}
+
+.link.active{
+    border-bottom: 2px solid var(--secondary-color);
+    z-index: 99;
+}
+
+.link {
+  position: relative;
+  text-decoration: none;
+  color: inherit;
+  padding-bottom: 4px;
+  transition: color 0.3s;
+  z-index: 99;
+}
+
+.link::after {
+  content: "";
+  position: absolute;
+  bottom: -2px;
+  left: 0;
+  width: 0%;
+  height: 2px;
+  background-color: var(--secondary-color);
+  transition: width 0.3s ease;
+  z-index: 99;
+}
+
+.link:hover::after {
+  width: 100%;
+  z-index: 99;
+}
+
+header ul li:hover{
+    cursor: pointer;
+    z-index: 99;
+}
+
+.link-cta{
+    width: 130px;
+    height: 40px;
+    font-weight: 500;
+    font-size: 15px;
+    background-color: var(--secondary-color);
+    color: var(--primary-color);
+    border: none;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+    overflow: hidden;
+    transition-duration: .3s;
+    z-index: 2;
+}
+
+.link-cta:hover{
+    box-shadow: 0px 5px 10px rgba(0, 0, 0, 0.103);
+    z-index: 2;
+}
+
+.link-cta::before {
+    width: 130px;
+    height: 130px;
+    position: absolute;
+    content: "";
+    background-color: var(--primary-color);
+    border-radius: 50%;
+    left: -100%;
+    top: 0;
+    transition-duration: .3s;
+    mix-blend-mode: difference;
+    z-index: 2;
+}
+
+.link-cta:hover::before {
+    transition-duration: .3s;
+    transform: translate(100%,-50%);
+    border-radius: 0;
+    z-index: 2;
+}
+
+/*Sections*/
+.hero{
+    margin-top: 100px;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    background-image: url(../img/servicios-bg.jpg);
+    background-size: cover;
+    background-position: 50% 80%;
+    position: relative;
+}
+
+.hero::before{
+    content: '';
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5);
+}
+
+.hero .container-servicios-title{
+    width: 70%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 200px 0;
+}
+
+.hero .container-servicios-title h1{
+    color: var(--primary-color);
+    z-index: 2;
+}
+
+.content{
+    width: 100%;
+    height: 150vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.content .container{
+    width: 70%;
+    height: 90%;
+    color: var(--primary-color);
+    display: grid;
+    grid-template-columns: repeat(6, 1fr);
+    grid-template-rows: repeat(18, 1fr);
+    grid-column-gap: 10px;
+    grid-row-gap: 10px;
+}
+
+.content .container div{
+    color: var(--primary-color);
+    background-color: var(--secondary-color);
+    padding: 40px;
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+}
+
+.content .container div a{
+    margin-top: auto;
+    background-color: var(--primary-color);
+    color: var(--secondary-color);
+}
+
+.content .container div p{
+    font-size: 16px;
+    font-weight: 600;
+    color: var(--neutral-light);
+}
+
+.div1 { 
+    grid-area: 1 / 1 / 7 / 5; 
+    background-image: url(../img/rehabilitacion.png);
+    background-size: cover;
+    background-position: center;
+}
+
+.div2 { 
+    grid-area: 1 / 5 / 7 / 7; 
+}
+
+.div3 { 
+    grid-area: 7 / 3 / 13 / 7; 
+    background-image: url(../img/interiores.jpg); 
+    background-size: cover;
+    background-position: center;
+}
+
+.div4 { 
+    grid-area: 7 / 1 / 13 / 3;
+}
+
+.div5 { 
+    grid-area: 13 / 1 / 19 / 5; 
+    background-image: url(../img/obra.png);
+    background-size: cover;
+    background-position: center;
+}
+
+.div6 { 
+    grid-area: 13 / 5 / 19 / 7;
+}
+
+/*Footer*/
+footer{
+    width: 100%;
+    height: 400px;
+    background-color: var(--secondary-color);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+
+footer .footer-container{
+    width: 70%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: var(--primary-color);
+    margin-top: 30px;
+}
+
+footer .footer-container div{
+    width: 25%;
+    height: 100%;
+    padding: 40px;
+}
+
+footer .footer-container div h5{
+    font-size: 20px;
+}
+
+footer .footer-container a{
+    color: var(--neutral-light);
+    font-weight: 500;
+}
+
+footer .footer-container li{
+    list-style: none;
+    margin: 15px 0;
+}
+
+footer .footer-container .logo-box img{
+    width: 70%;
+    border: 5px solid var(--primary-color);
+}
+
+footer .footer-container .social-links ul{
+    display: flex;
+}
+
+footer .footer-container .social-links svg{
+    width: 40px;
+    height: 40px;
+    padding: 5px;
+    background-color: var(--primary-color);
+    margin-right: 10px;
+    border-radius: 5px;
+}
+
+footer .footer-container .contact-links li{
+    display: flex;
+    align-items: center;
+}
+
+footer .footer-container .contact-links svg{
+    width: 25px;
+    height: 25px;
+    fill: var(--neutral-light);
+    stroke: var(--neutral-light);
+    margin-right: 5px;
+}
+
+footer p{
+    color: var(--neutral-light);
+    margin-bottom: 20px;
+}
+
+/*Home responsive mobile*/
+@media screen and (max-width: 767px){
+    .header-container{
+        width: 100%;
+        height: 90px;
+        position: fixed;
+    }
+    
+    header{
+        width: 100%;
+        height: 90px;
+        align-items: start;
+        padding-top: 20px;
+        background-color: var(--primary-color);
+    }
+
+    header .link-cta{
+        display: none;
+    }
+
+    .links {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        position: fixed;
+        list-style: none;
+        width: 100%;
+        transform: translateY(-100%);
+        opacity: 0;
+        pointer-events: none;
+        transition: transform 0.4s ease, opacity 0.4s ease;
+        border-top: 1px solid var(--neutral-light2);
+        background-color: var(--primary-color);
+        z-index: 4;
+    }
+
+    .links.show {
+    transform: translateY(70px);
+    opacity: 1;
+    pointer-events: all;
+    }
+
+    .link{
+        color: var(--secondary-color);
+        margin: 20px;
+        font-size: 20px;
+        display: flex;
+        justify-content: center;
+        z-index: 4;
+    }
+
+    header svg{
+        padding: 5px;
+        display: block;
+        width: 40px;
+        height: 40px;
+        margin-right: 20px;
+        cursor: pointer;
+        stroke: var(--secondary-color);
+        margin-top: 5px
+    }
+
+    header .mobile-logo{
+        width: 50px;
+        height: 50px;
+        display: block;
+        margin-left: 10px;
+    }
+
+    header img{
+        display: none;
+    }
+
+    header button{
+        display: none;
+    }
+}
