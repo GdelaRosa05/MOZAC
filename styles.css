@@ -1209,6 +1209,10 @@ footer p{
         justify-content: center;
     }
 
+    .proyectos-box .proyectos-container .proyectos-content-box .proyecto-box{
+        min-width: 100%;
+    }
+
     .proyectos-box .proyectos-container .proyectos-cta{
     justify-content: end;
     }

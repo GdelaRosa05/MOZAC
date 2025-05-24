@@ -616,10 +616,13 @@ footer p{
     grid-row: 1;
     padding: 0;
     margin-bottom: 40px;
+    width: 100%;
+    min-width: none;
   }
 
   .div5 form{
     width: 100%;
+    min-width: 0;
   }
 
   .div1 {
@@ -643,7 +646,6 @@ footer p{
   }
 
   .box{
-    justify-content: center;
     align-items: center;
     text-align: center;
   }
