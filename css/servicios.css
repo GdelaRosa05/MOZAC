@@ -25,20 +25,17 @@ html {
 }
 
 /*Global styles*/
-body{
+body {
     background-color: var(--primary-color);
     height: 100%;
     display: flex;
     justify-content: center;
     flex-direction: column;
     overflow-x: hidden;
+    scrollbar-width: thin;
+    scrollbar-color: var(--secondary-color) var(--neutral);
 }
 
-/* Contenedor general */
-body {
-  scrollbar-width: thin; /* Para Firefox */
-  scrollbar-color: var(--secondary-color) var(--neutral); /* Para Firefox */
-}
 
 /* Para Chrome, Edge, Safari */
 ::-webkit-scrollbar {
@@ -81,14 +78,18 @@ span{
 }
 
 h1{
-    font-size: 50px;
-    font-weight: 800;
-    color: var(--secondary-color);
+    font-size: clamp(3rem, 3vw, 3.75rem);
+    font-weight: 900;
 }
 
 h2{
-    font-size: 40px;
+    font-size: clamp(1.3rem, 2vw, 2.5rem);
     font-weight: 800;
+}
+
+h6{
+    font-size: clamp(0.75rem, 1.8vw, 0.875rem);
+    font-weight: 600;
 }
 
 a{
@@ -99,6 +100,12 @@ a{
 
 a:hover{
     cursor: pointer;
+}
+
+p{
+    font-size: clamp(0.8rem, 0.7vw, 1rem);
+    margin: 20px 0;
+    font-weight: 600 !important; 
 }
 
 button{
@@ -142,8 +149,9 @@ button:hover::before {
 }
 
 /*Header*/
-.header-container{
+.header-container {
     position: fixed;
+    top: 0;
     width: 100%;
     height: 100px;
     background-color: var(--primary-color);
@@ -152,17 +160,15 @@ button:hover::before {
     align-items: center;
     z-index: 2;
     left: 0;
-    top: 0;
-    z-index: 99;
 }
 
-header{
-    width: 70%;
+header {
+    width: fit-content;
+    min-width: 70%;
     height: 100px;
     display: flex;
     justify-content: space-between;
     align-items: center;
-    position: fixed;
     z-index: 99;
 }
 
@@ -173,7 +179,6 @@ header .link-cta{
 #header-container.scrolled {
   box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
   transition: box-shadow 0.3s ease;
-  z-index: 99;
 }
 
 header svg{
@@ -183,17 +188,15 @@ header svg{
 
 header .mobile-logo{
     display: none;
-    z-index: 99;
+    z-index: 4;
 }
 
 header .header-logo{
-    width: 160px;
-    z-index: 99;
+    width: clamp(120px, 10vw, 160px);
 }
 
 header ul{
     display: flex;
-    z-index: 99;
 }
 
 header ul li{
@@ -201,12 +204,11 @@ header ul li{
     margin: 0 15px;
     font-weight: 500;
     cursor: pointer;
-    z-index: 99;
+    font-size: clamp(12px, 1.5vw, 16px);
 }
 
 .link.active{
     border-bottom: 2px solid var(--secondary-color);
-    z-index: 99;
 }
 
 .link {
@@ -215,7 +217,6 @@ header ul li{
   color: inherit;
   padding-bottom: 4px;
   transition: color 0.3s;
-  z-index: 99;
 }
 
 .link::after {
@@ -227,24 +228,21 @@ header ul li{
   height: 2px;
   background-color: var(--secondary-color);
   transition: width 0.3s ease;
-  z-index: 99;
 }
 
 .link:hover::after {
   width: 100%;
-  z-index: 99;
 }
 
 header ul li:hover{
     cursor: pointer;
-    z-index: 99;
 }
 
 .link-cta{
     width: 130px;
     height: 40px;
     font-weight: 500;
-    font-size: 15px;
+    font-size: clamp(12px, 1.5vw, 16px);
     background-color: var(--secondary-color);
     color: var(--primary-color);
     border: none;
@@ -255,12 +253,10 @@ header ul li:hover{
     position: relative;
     overflow: hidden;
     transition-duration: .3s;
-    z-index: 2;
 }
 
 .link-cta:hover{
     box-shadow: 0px 5px 10px rgba(0, 0, 0, 0.103);
-    z-index: 2;
 }
 
 .link-cta::before {
@@ -274,14 +270,12 @@ header ul li:hover{
     top: 0;
     transition-duration: .3s;
     mix-blend-mode: difference;
-    z-index: 2;
 }
 
 .link-cta:hover::before {
     transition-duration: .3s;
     transform: translate(100%,-50%);
     border-radius: 0;
-    z-index: 2;
 }
 
 /*Sections*/
@@ -314,15 +308,16 @@ header ul li:hover{
 
 .hero .container-servicios-title h1{
     color: var(--primary-color);
-    z-index: 2;
+    z-index: 1;
 }
 
 .content{
     width: 100%;
-    height: 150vh;
+    height: fit-content;
     display: flex;
     justify-content: center;
     align-items: center;
+    padding: 60px 0;
 }
 
 .content .container{
@@ -339,10 +334,11 @@ header ul li:hover{
 .content .container div{
     color: var(--primary-color);
     background-color: var(--secondary-color);
-    padding: 40px;
+    padding: clamp(20px, 2vw, 40px);
     display: flex;
     flex-direction: column;
     height: 100%;
+    min-height: 280px
 }
 
 .content .container div a{
@@ -352,7 +348,6 @@ header ul li:hover{
 }
 
 .content .container div p{
-    font-size: 16px;
     font-weight: 600;
     color: var(--neutral-light);
 }
@@ -366,6 +361,7 @@ header ul li:hover{
 
 .div2 { 
     grid-area: 1 / 5 / 7 / 7; 
+    min-width: 220px;
 }
 
 .div3 { 
@@ -377,6 +373,7 @@ header ul li:hover{
 
 .div4 { 
     grid-area: 7 / 1 / 13 / 3;
+    min-width: 220px;
 }
 
 .div5 { 
@@ -388,12 +385,14 @@ header ul li:hover{
 
 .div6 { 
     grid-area: 13 / 5 / 19 / 7;
+    min-width: 220px;
 }
 
 /*Footer*/
 footer{
     width: 100%;
-    height: 400px;
+    height: fit-content;
+    min-height: 400px;
     background-color: var(--secondary-color);
     display: flex;
     justify-content: center;
@@ -403,18 +402,19 @@ footer{
 
 footer .footer-container{
     width: 70%;
-    height: 100%;
+    height: fit-content;
     display: flex;
     justify-content: center;
-    align-items: center;
     color: var(--primary-color);
     margin-top: 30px;
+    flex-wrap: wrap;
 }
 
 footer .footer-container div{
     width: 25%;
     height: 100%;
     padding: 40px;
+    min-width: 250px;
 }
 
 footer .footer-container div h5{
@@ -473,6 +473,7 @@ footer p{
         width: 100%;
         height: 90px;
         position: fixed;
+        z-index: 99;
     }
     
     header{
@@ -519,6 +520,19 @@ footer p{
         z-index: 4;
     }
 
+    .content .container{
+        width: 90%;
+        max-width: 90%;
+        display: flex;
+        flex-direction: column;
+        gap: 20px;
+    }
+
+    .content .container div {
+    grid-area: unset;
+    width: 100%;
+  }
+
     header svg{
         padding: 5px;
         display: block;
@@ -543,5 +557,29 @@ footer p{
 
     header button{
         display: none;
+    }
+
+    span{
+        background-color: var(--primary-color);
+        color: var(--secondary-color);
+        padding: 0 10px;
+    }
+
+    footer .footer-container div{
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+    }
+
+    footer .footer-container .logo-box{
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+    }
+
+    footer .footer-container .logo-box img{
+        width: 100%;
     }
 }

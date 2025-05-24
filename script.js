@@ -88,6 +88,7 @@ presupuestoBtns.forEach((presupuestoBtn) => {
   requestAnimationFrame(() => {
     form.classList.add('show')
     overlay.classList.add('show')
+    body.classList.add('no-scroll')
   })
 
   // Cerrar
@@ -101,6 +102,7 @@ presupuestoBtns.forEach((presupuestoBtn) => {
         setTimeout(() => {
           body.removeChild(form)
           body.removeChild(overlay)
+          body.classList.remove('no-scroll')
         }, 300)
       })
     }

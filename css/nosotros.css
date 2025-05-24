@@ -25,20 +25,17 @@ html {
 }
 
 /*Global styles*/
-body{
+body {
     background-color: var(--primary-color);
     height: 100%;
     display: flex;
     justify-content: center;
     flex-direction: column;
     overflow-x: hidden;
+    scrollbar-width: thin;
+    scrollbar-color: var(--secondary-color) var(--neutral);
 }
 
-/* Contenedor general */
-body {
-  scrollbar-width: thin; /* Para Firefox */
-  scrollbar-color: var(--secondary-color) var(--neutral); /* Para Firefox */
-}
 
 /* Para Chrome, Edge, Safari */
 ::-webkit-scrollbar {
@@ -81,14 +78,23 @@ span{
 }
 
 h1{
-    font-size: 50px;
-    font-weight: 800;
-    color: var(--secondary-color);
+    font-size: clamp(3rem, 3vw, 3.75rem);
+    font-weight: 900;
 }
 
 h2{
-    font-size: 40px;
+    font-size: clamp(1.3rem, 2vw, 2.5rem);
     font-weight: 800;
+}
+
+h3{
+    font-size: clamp(0.9rem, 1vw, 2rem);
+    font-weight: 800;
+}
+
+h6{
+    font-size: clamp(0.75rem, 1.8vw, 0.875rem);
+    font-weight: 600;
 }
 
 a{
@@ -102,8 +108,9 @@ a:hover{
 }
 
 p{
-    font-size: 16px;
-    font-weight: 600;
+    font-size: clamp(0.8rem, 0.7vw, 1rem);
+    margin: 20px 0;
+    font-weight: 600 !important; 
 }
 
 button{
@@ -147,8 +154,9 @@ button:hover::before {
 }
 
 /*Header*/
-.header-container{
+.header-container {
     position: fixed;
+    top: 0;
     width: 100%;
     height: 100px;
     background-color: var(--primary-color);
@@ -157,17 +165,15 @@ button:hover::before {
     align-items: center;
     z-index: 2;
     left: 0;
-    top: 0;
-    z-index: 99;
 }
 
-header{
-    width: 70%;
+header {
+    width: fit-content;
+    min-width: 70%;
     height: 100px;
     display: flex;
     justify-content: space-between;
     align-items: center;
-    position: fixed;
     z-index: 99;
 }
 
@@ -178,7 +184,6 @@ header .link-cta{
 #header-container.scrolled {
   box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
   transition: box-shadow 0.3s ease;
-  z-index: 99;
 }
 
 header svg{
@@ -188,17 +193,15 @@ header svg{
 
 header .mobile-logo{
     display: none;
-    z-index: 99;
+    z-index: 4;
 }
 
 header .header-logo{
-    width: 160px;
-    z-index: 99;
+    width: clamp(120px, 10vw, 160px);
 }
 
 header ul{
     display: flex;
-    z-index: 99;
 }
 
 header ul li{
@@ -206,12 +209,11 @@ header ul li{
     margin: 0 15px;
     font-weight: 500;
     cursor: pointer;
-    z-index: 99;
+    font-size: clamp(12px, 1.5vw, 16px);
 }
 
 .link.active{
     border-bottom: 2px solid var(--secondary-color);
-    z-index: 99;
 }
 
 .link {
@@ -220,7 +222,6 @@ header ul li{
   color: inherit;
   padding-bottom: 4px;
   transition: color 0.3s;
-  z-index: 99;
 }
 
 .link::after {
@@ -232,24 +233,21 @@ header ul li{
   height: 2px;
   background-color: var(--secondary-color);
   transition: width 0.3s ease;
-  z-index: 99;
 }
 
 .link:hover::after {
   width: 100%;
-  z-index: 99;
 }
 
 header ul li:hover{
     cursor: pointer;
-    z-index: 99;
 }
 
 .link-cta{
     width: 130px;
     height: 40px;
     font-weight: 500;
-    font-size: 15px;
+    font-size: clamp(12px, 1.5vw, 16px);
     background-color: var(--secondary-color);
     color: var(--primary-color);
     border: none;
@@ -260,12 +258,10 @@ header ul li:hover{
     position: relative;
     overflow: hidden;
     transition-duration: .3s;
-    z-index: 99;
 }
 
 .link-cta:hover{
     box-shadow: 0px 5px 10px rgba(0, 0, 0, 0.103);
-    z-index: 99;
 }
 
 .link-cta::before {
@@ -279,14 +275,12 @@ header ul li:hover{
     top: 0;
     transition-duration: .3s;
     mix-blend-mode: difference;
-    z-index: 99;
 }
 
 .link-cta:hover::before {
     transition-duration: .3s;
     transform: translate(100%,-50%);
     border-radius: 0;
-    z-index: 99;
 }
 
 /*Sections*/
@@ -319,12 +313,13 @@ header ul li:hover{
 
 .hero .container-nosotros-title h1{
     color: var(--primary-color);
-    z-index: 2;
+    z-index: 1;
 }
 
 .content{
     width: 100%;
-    height: 100vh;
+    height: fit-content;
+    padding: 60px 0;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -333,7 +328,8 @@ header ul li:hover{
 
 .content .nosotros-container{
     width: 70%;
-    height: 90%;
+    height: fit-content;
+    max-height: 800px;
     display: grid;
     grid-template-columns: repeat(8, 1fr);
     grid-template-rows: repeat(6, 1fr);
@@ -342,10 +338,9 @@ header ul li:hover{
 }
 
 .content .nosotros-container div h2{
-    font-size: 40px;
     margin-top: auto;
     color: var(--primary-color);
-    z-index: 2;
+    z-index: 1;
 }
 
 .content .nosotros-container div{
@@ -369,6 +364,7 @@ header ul li:hover{
     margin-right: 10px;
     position: relative;
     text-align: start !important;
+    min-width: 400px;
 }
 
 .div1::before{
@@ -382,8 +378,8 @@ header ul li:hover{
 .div1 h2{
     color: var(--primary-color);
     margin-left: 40px;
+    margin-right: 40px;
     margin-bottom: 20px;
-    font-size: 30px !important;
 }
 
 .div1 a{
@@ -400,6 +396,7 @@ header ul li:hover{
     align-items: start; 
     text-align: start !important;
     padding: 40px;
+    min-width: 400px;
 }
 
 .div2 p{
@@ -415,24 +412,29 @@ header ul li:hover{
 
 .div3 { 
     grid-area: 3 / 5 / 5 / 7;
+    padding: 20px;
 }
 
 .div4 { 
     grid-area: 3 / 7 / 5 / 9;
+    padding: 20px;
 }
 
 .div5 { 
     grid-area: 5 / 5 / 7 / 7;
+    padding: 20px;
 }
 
 .div6 { 
     grid-area: 5 / 7 / 7 / 9;
+    padding: 20px;
 }
 
 /*Footer*/
 footer{
     width: 100%;
-    height: 400px;
+    height: fit-content;
+    min-height: 400px;
     background-color: var(--secondary-color);
     display: flex;
     justify-content: center;
@@ -442,18 +444,19 @@ footer{
 
 footer .footer-container{
     width: 70%;
-    height: 100%;
+    height: fit-content;
     display: flex;
     justify-content: center;
-    align-items: center;
     color: var(--primary-color);
     margin-top: 30px;
+    flex-wrap: wrap;
 }
 
 footer .footer-container div{
     width: 25%;
     height: 100%;
     padding: 40px;
+    min-width: 250px;
 }
 
 footer .footer-container div h5{
@@ -512,6 +515,7 @@ footer p{
         width: 100%;
         height: 90px;
         position: fixed;
+        z-index: 99;
     }
     
     header{
@@ -558,6 +562,19 @@ footer p{
         z-index: 4;
     }
 
+    .content .container{
+        width: 90%;
+        max-width: 90%;
+        display: flex;
+        flex-direction: column;
+        gap: 20px;
+    }
+
+    .content .container div {
+    grid-area: unset;
+    width: 100%;
+  }
+
     header svg{
         padding: 5px;
         display: block;
@@ -582,5 +599,76 @@ footer p{
 
     header button{
         display: none;
+    }
+
+    span{
+        background-color: var(--primary-color);
+        color: var(--secondary-color);
+        padding: 0 10px;
+    }
+
+    .content .nosotros-container{
+        display: flex;
+        max-height: unset;
+        flex-wrap: wrap;
+        justify-content: center;
+    }
+
+    .content .nosotros-container .div1{
+        width: 100%;
+        min-height: 600px;
+        margin: 0;
+    }
+
+    .content .nosotros-container .div2{
+        width: 100%;
+        min-width: 100px;
+    }
+
+    .content .nosotros-container div{
+        width: 48%;
+        min-width: 100px;
+    }
+
+    footer .footer-container div{
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+    }
+
+    footer .footer-container .logo-box{
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+    }
+
+    footer .footer-container .logo-box img{
+        width: 100%;
+    }
+}
+
+@media screen and (max-width: 1200px) and (min-width: 768px){
+    .content .nosotros-container{
+        display: flex;
+        max-height: unset;
+        flex-wrap: wrap;
+    }
+
+    .content .nosotros-container .div1{
+        width: 100%;
+        min-height: 600px;
+        margin: 0;
+    }
+
+    .content .nosotros-container .div2{
+        width: 100%;
+        min-width: 100px;
+    }
+
+    .content .nosotros-container div{
+        width: 49%;
+        min-width: 100px;
     }
 }

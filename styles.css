@@ -80,7 +80,7 @@ span{
 }
 
 h1{
-    font-size: clamp(2rem, 5vw, 3.75rem);
+    font-size: clamp(2rem, 3vw, 3.75rem);
     font-weight: 900;
 }
 
@@ -105,7 +105,7 @@ a:hover{
 }
 
 p{
-    font-size: clamp(0.875rem, 2vw, 1rem);
+    font-size: clamp(0.875rem, 1vw, 1rem);
     font-weight: 600 !important; 
 }
 
@@ -163,12 +163,12 @@ button:hover::before {
 }
 
 header{
-    width: 70%;
+    width: fit-content;
+    min-width: 70%;
     height: 100px;
     display: flex;
     justify-content: space-between;
     align-items: center;
-    position: fixed;
     z-index: 99;
 }
 
@@ -192,7 +192,7 @@ header .mobile-logo{
 }
 
 header .header-logo{
-    width: 160px;
+    width: clamp(120px, 10vw, 160px);
 }
 
 header ul{
@@ -204,6 +204,7 @@ header ul li{
     margin: 0 15px;
     font-weight: 500;
     cursor: pointer;
+    font-size: clamp(12px, 1.5vw, 16px);
 }
 
 .link.active{
@@ -241,7 +242,7 @@ header ul li:hover{
     width: 130px;
     height: 40px;
     font-weight: 500;
-    font-size: 15px;
+    font-size: clamp(12px, 1.5vw, 16px);
     background-color: var(--secondary-color);
     color: var(--primary-color);
     border: none;
@@ -283,26 +284,29 @@ header ul li:hover{
 /*Container*/
 .container{
     width: 100vw;
-    height: 100vh;
+    height: calc(100vh - 100px);
     margin: 0;
     padding: 0;
+    min-height: 1200px
 }
 
 /*Welcome section*/
 .welcome-section{
     width: 100vw;
-    height: 100vh;
+    height: calc(fit-content - 100px);
     display: flex;
     background-image: url('img/portada.png');
     background-size: 37% 100%;
     background-position: right top;
     background-repeat: no-repeat;
-    min-height: 640px;
+    margin-top: 100px;
+    min-height: calc(100vh - 100px);
 }
 
 section .welcome-box{
     width: 45%;
     height: 100%;
+    min-height: calc(100vh - 100px);
     position: relative;
     left: 15%;
     display: flex;
@@ -313,11 +317,12 @@ section .welcome-box{
 section .welcome-box h6{
     margin-bottom: 20px;
     color: var(--neutral);
+    font-size: clamp(0.9rem, 1vw, 1.125rem);
 }
 
 section .welcome-box .welcome-description{
     margin-top: 20px;
-    width: 70%;
+    width: clamp(90%, 70vw, 70%);
 }
 
 section .welcome-box .welcome-description p{
@@ -332,7 +337,7 @@ section .welcome-box .welcome-button-cta-box{
 
 section .welcome-box .welcome-button-cta-box button{
     width: 330px;
-    font-size: 18px;
+    font-size: clamp(16px, 1vw, 18px);
     height: 50px;
 }
 
@@ -346,13 +351,97 @@ section .welcome-box .welcome-button-cta-box button svg{
     margin-left: 10px;
 }
 
+section .welcome-box .welcome-advantages{
+    position: absolute;
+    bottom: 0;
+    width: 120%;
+    min-width: 600px;
+    height: auto;
+    max-height: 270px;
+    background-color: var(--secondary-color);
+    border: 10px solid var(--primary-color);
+    border-left: 0;
+    display: flex;
+}
+
+section .welcome-box .welcome-advantages .scroll-text-box{
+    width: 10%;
+    height: auto;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+section .welcome-box .welcome-advantages .scroll-text-box p{
+    rotate: -90deg;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: var(--neutral-light);    
+    font-size: 0.8rem;
+}
+
+section .welcome-box .welcome-advantages .scroll-text-box p svg{
+    width: 20px;
+    height: 20px;
+    stroke: var(--neutral-light);
+    margin-right: 5px;
+}
+
+section .welcome-box .welcome-advantages .characteristic{
+    width: 30%;
+    height: 100%;
+    max-height: 270px;
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    padding: 20px;
+    overflow-y: hidden;
+    overflow-x: hidden;
+}
+
+section .welcome-box .welcome-advantages .characteristic .characteristic-icon-box{
+    width: 100%;
+    height: 35%;
+}
+
+section .welcome-box .welcome-advantages .characteristic .characteristic-icon-box svg{
+    width: clamp(2.5rem, 5vw, 3.2rem);
+    height: 100%;
+    fill: var(--primary-color);
+}
+
+section .welcome-box .welcome-advantages .characteristic .characteristic-icon-box .compromiso-logo{
+    width: 3rem;
+}
+
+section .welcome-box .welcome-advantages .characteristic .characteristic-icon-box .atencion-logo{
+    width: 3rem;
+}
+
+section .welcome-box .welcome-advantages .characteristic .characteristic-content-box{
+    width: 100%;
+    height: 65%;
+}
+
+section .welcome-box .welcome-advantages .characteristic .characteristic-content-box h6{
+    color: var(--primary-color);
+    margin-top: 20px;
+    margin-bottom: 10px;
+    font-size: clamp(0.75rem, 0.7vw, 3rem);
+}
+
+section .welcome-box .welcome-advantages .characteristic .characteristic-content-box p{
+    font-size: clamp(0.6rem, 0.7vw, 3rem);
+    color: var(--neutral-light);
+}
+
 .presupuesto-form{
     position: fixed;
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
-    z-index: 3;
-    width: fit-content;
+    z-index: 200;
     display: flex;
     flex-direction: column;
     background-color: var(--primary-color);
@@ -360,6 +449,20 @@ section .welcome-box .welcome-button-cta-box button svg{
     opacity: 0;
     transform: translate(-50%, -50%) scale(0.95);
     transition: opacity 0.3s ease, transform 0.3s ease;
+    width: 500px;
+    height: 90vh;
+    overflow-y: scroll;
+    overflow-y: scroll; /* o auto */
+    scrollbar-width: none; /* Firefox */
+    -ms-overflow-style: none;
+}
+
+body.no-scroll {
+  overflow: hidden;
+}
+
+.presupuesto-form button{
+    min-height: 40px;
 }
 
 .presupuesto-form.show {
@@ -447,119 +550,41 @@ section .welcome-box .welcome-button-cta-box button svg{
   width: 100vw;
   height: 100vh;
   background-color: rgba(0, 0, 0, 0.5); /* o rgba(0, 0, 0, 0.5) para opacidad */
-  z-index: 2;
+  z-index: 199;
   opacity: 0;
   transition: opacity 0.3s ease;
+  overflow: hidden;
 }
 
 .form-overlay.show {
     opacity: 1;
 }
 
-section .welcome-box .welcome-advantages{
-    position: absolute;
-    bottom: 0;
-    width: 120%;
-    min-width: 600px;
-    height: auto;
-    min-height: 150px;
-    overflow-y: auto;
-    background-color: var(--secondary-color);
-    border: 10px solid var(--primary-color);
-    border-left: 0;
-    display: flex;
-}
-
-section .welcome-box .welcome-advantages .scroll-text-box{
-    width: 10%;
-    height: auto;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-}
-
-section .welcome-box .welcome-advantages .scroll-text-box p{
-    rotate: -90deg;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    color: var(--neutral-light);    
-}
-
-section .welcome-box .welcome-advantages .scroll-text-box p svg{
-    width: 20px;
-    height: 20px;
-    stroke: var(--neutral-light);
-    margin-right: 5px;
-}
-
-section .welcome-box .welcome-advantages .characteristic{
-    width: 30%;
-    min-width: 200px;
-    height: 100%;
-    display: flex;
-    justify-content: center;
-    flex-direction: column;
-    padding: 20px;
-}
-
-section .welcome-box .welcome-advantages .characteristic .characteristic-icon-box{
-    width: 100%;
-    height: 35%;
-}
-
-section .welcome-box .welcome-advantages .characteristic .characteristic-icon-box svg{
-    width: 60px;
-    height: 100%;
-    fill: var(--primary-color);
-}
-
-section .welcome-box .welcome-advantages .characteristic .characteristic-icon-box .compromiso-logo{
-    width: 55px;
-}
-
-section .welcome-box .welcome-advantages .characteristic .characteristic-icon-box .atencion-logo{
-    width: 55px;
-}
-
-section .welcome-box .welcome-advantages .characteristic .characteristic-content-box{
-    width: 100%;
-    height: 65%;
-}
-
-section .welcome-box .welcome-advantages .characteristic .characteristic-content-box h6{
-    color: var(--primary-color);
-    margin-top: 20px;
-    margin-bottom: 10px;
-}
-
-section .welcome-box .welcome-advantages .characteristic .characteristic-content-box p{
-    font-size: clamp(0.75rem, 1.8vw, 0.875rem);
-    color: var(--neutral-light);
-}
-
 /*Home - Services*/
 .services-box {
   width: 100%;
   height: 100vh;
+  min-height: 800px;
   display: flex;
   justify-content: center;
   align-items: center;
+  padding: 40px 0;
 }
 
 .services-box .services-grid-container {
   width: 70%;
   height: 80%;
   display: grid;
-    grid-template-columns: repeat(5, 1fr);
-    grid-template-rows: repeat(5, 1fr);
-    grid-column-gap: 10px;
-    grid-row-gap: 10px;
+  grid-template-columns: repeat(5, 1fr);
+  grid-template-rows: repeat(5, 1fr);
+  gap: 10px;
+  padding: 0;
 }
 
 .services-box .services-grid-container div{
     background-color: var(--neutral-light2);
     padding: 20px;
+    min-height: 280px;
 }
 
 .div1 { 
@@ -683,18 +708,6 @@ section .welcome-box .welcome-advantages .characteristic .characteristic-content
     align-items: center;
     flex-direction: column;
     color: var(--primary-color);
-    position: relative;
-}
-
-.proyectos-container::before {
-    content: '';
-    background: linear-gradient(to left, rgba(0, 0, 0, 1) 0%, rgba(0, 0, 0, 0) 10%);
-    position: absolute;
-    width: 100%;
-    height: 100%;
-    top: 0;
-    left: 0;
-    z-index: 1;
 }
 
 .proyectos-box .proyectos-container .proyectos-title-box{
@@ -714,16 +727,17 @@ section .welcome-box .welcome-advantages .characteristic .characteristic-content
 }
 
 .proyectos-box .proyectos-container .proyectos-content-box{
-    width: 100%;
+    width: fit-content;
     display: flex;
     overflow: hidden;
-    flex-wrap: nowrap;
+    flex-wrap: wrap;
+    gap: 20px;
 }
 
 .proyectos-box .proyectos-container .proyectos-content-box .proyecto-box{
-    width: 320px;
+    width: 20%;
+    min-width: 250px;
     height: fit-content;
-    margin: 20px;
     background-color: var(--primary-color);
     flex-shrink: 0;
     padding: 20px;
@@ -766,9 +780,27 @@ section .welcome-box .welcome-advantages .characteristic .characteristic-content
     margin-left: 0;
 }
 
+.proyectos-box .proyectos-container .proyectos-cta{
+    width: 100%;
+    margin-top: 50px;
+    display: flex;
+}
+
+.proyectos-box .proyectos-container .proyectos-cta a{
+    background-color: var(--primary-color);
+    color: var(--secondary-color);
+}
+
+.proyectos-box .proyectos-container .proyectos-cta a svg{
+    width: 22px;
+    height: 22px;
+    stroke: var(--secondary-color);
+    margin-left: 10px;
+}
+
 .nosotros-box{
     width: 100%;
-    height: 100vh;
+    height: fit-content;
     padding: 100px 0;
     background: var(--primary-color);
     display: flex;
@@ -776,31 +808,35 @@ section .welcome-box .welcome-advantages .characteristic .characteristic-content
     align-items: center;
 }
 
-.nosotros-box .nosotros-container{
-    width: 70%;
-    height: 70%;
-    color: var(--secondary-color);
-    display: grid;
-    grid-template-columns: repeat(5, 1fr);
-    grid-template-rows: repeat(5, 1fr);
-    grid-column-gap: 0px;
-    grid-row-gap: 0px;
+.nosotros-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap;
+  width: 70%;
+  height: 70%;
+  color: var(--secondary-color);
 }
 
-.div-nosotros-1 { grid-area: 1 / 1 / 6 / 4; }
+.div-nosotros-1 {
+  flex: 1 1 600px; /* base 700px, puede encoger */
+  min-width: 300px;
+}
 
 .div-nosotros-1 video{
     width: 100%;
     height: 100%;
-    object-fit: cover;
 }
 
-.div-nosotros-2 { 
-    grid-area: 1 / 4 / 6 / 6; 
-    padding: 0 40px;
-    display: flex;
-    flex-direction: column;
-    height: 100%;
+.div-nosotros-2 {
+  flex: 1 1 500px;
+  min-width: 300px;
+  max-width: 100%;
+  padding: 20px;
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+  width: 500px;
 }
 
 .div-nosotros-2 h2{
@@ -809,7 +845,7 @@ section .welcome-box .welcome-advantages .characteristic .characteristic-content
 
 .div-nosotros-2 p{
     margin: 20px 0;
-    font-size: 16px;
+    font-size: 0.95rem;
     color: var(--neutral);
 }
 
@@ -823,6 +859,7 @@ section .welcome-box .welcome-advantages .characteristic .characteristic-content
 .nosotros-box .nosotros-container .div-nosotros-2 .cta-box{
     display: flex;
     margin-top: auto;
+    margin-top: 40px;
 }
 
 .nosotros-box .nosotros-container .div-nosotros-2 .cta-box button{
@@ -905,7 +942,8 @@ section .welcome-box .welcome-advantages .characteristic .characteristic-content
 
 footer{
     width: 100%;
-    height: 400px;
+    height: fit-content;
+    min-height: 400px;
     background-color: var(--secondary-color);
     display: flex;
     justify-content: center;
@@ -915,18 +953,19 @@ footer{
 
 footer .footer-container{
     width: 70%;
-    height: 100%;
+    height: fit-content;
     display: flex;
     justify-content: center;
-    align-items: center;
     color: var(--primary-color);
     margin-top: 30px;
+    flex-wrap: wrap;
 }
 
 footer .footer-container div{
     width: 25%;
     height: 100%;
     padding: 40px;
+    min-width: 250px;
 }
 
 footer .footer-container div h5{
@@ -1062,4 +1101,150 @@ footer p{
         color: var(--secondary-color);
         padding: 0 10px;
     }
+
+    .presupuesto-form{
+        width: 90%;
+        height: 80vh;
+    }
+
+    .welcome-section{
+        background-size: cover;
+        background-position: center;
+        justify-content: center;
+        height: fit-content;
+        padding: 40px 0;
+    }
+
+    section .welcome-box{
+        left: 0;
+        width: 70%;
+        height: fit-content;
+        color: var(--primary-color);
+    }
+
+    section .welcome-box .welcome-description{
+        width: 100%;
+    }
+
+    section .welcome-box h6, section .welcome-box .welcome-description p{
+        color: var(--neutral-light2);
+    }
+
+    section .welcome-box .welcome-advantages{
+        position: relative;
+        flex-direction: column;
+        width: 20px !important;
+        min-width: fit-content;
+        max-height: none;
+        border: 10px solid var(--primary-color);
+        bottom: 20px;
+    }
+
+    section .welcome-box .welcome-button-cta-box{
+        margin-bottom: 60px;
+    }
+
+    section .welcome-box .welcome-button-cta-box button{
+        width: clamp(200px, 80%, 330px);
+        font-size: clamp(14px, 2vw, 18px);
+        height: clamp(40px, 6vh, 50px);
+        background-color: var(--primary-color);
+        color: var(--secondary-color);
+    }
+
+    section .welcome-box .welcome-button-cta-box button svg{
+        stroke: var(--secondary-color);
+    }
+
+    section .welcome-box .welcome-button-cta-box button::before{
+        width: clamp(200px, 100%, 330px);
+        font-size: clamp(14px, 2vw, 18px);
+    }
+
+    section .welcome-box .welcome-advantages .scroll-text-box{
+        width: 100%;
+    }
+
+    section .welcome-box .welcome-advantages .scroll-text-box p{
+        rotate: 0deg;
+        padding: 20px 0;
+    }
+
+    section .welcome-box .welcome-advantages .scroll-text-box p svg{
+        rotate: -90deg;
+    }
+
+    section .welcome-box .welcome-advantages .characteristic{
+        width: 100%;
+    }
+
+    .services-box{
+        height: fit-content;
+    }
+
+    .services-box .services-grid-container {
+        grid-template-columns: 1fr;
+        grid-auto-rows: min-content;
+        grid-template-rows: none;
+        height: auto;   
+        }
+
+    .services-box .services-grid-container div {
+        grid-area: auto !important;
+    }
+
+    .services-box .services-grid-container .div2{
+        grid-row: 1 !important;
+    }
+
+    .services-box .services-grid-container .div1{
+        grid-row: 2 !important;
+    }
+
+    .proyectos-box .proyectos-container .proyectos-title-box p{
+        width: 100%;
+    }
+
+    .proyectos-box .proyectos-container .proyectos-content-box{
+        justify-content: center;
+    }
+
+    .proyectos-box .proyectos-container .proyectos-cta{
+    justify-content: end;
+    }
+
+    .nosotros-container{
+        width: 100%;
+    }
+
+    .div-nosotros-2{
+        margin: 0 40px;
+    }
+
+    .div-nosotros-2 h2{
+        margin-top: 30px;
+    }
+
+    .nosotros-container span{
+        color: var(--primary-color);
+    }
+
+    footer .footer-container div{
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+    }
+
+    footer .footer-container .logo-box{
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+    }
+
+    footer .footer-container .logo-box img{
+        width: 100%;
+    }
+
 }
