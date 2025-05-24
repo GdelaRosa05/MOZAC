@@ -562,19 +562,6 @@ footer p{
         z-index: 4;
     }
 
-    .content .container{
-        width: 90%;
-        max-width: 90%;
-        display: flex;
-        flex-direction: column;
-        gap: 20px;
-    }
-
-    .content .container div {
-    grid-area: unset;
-    width: 100%;
-  }
-
     header svg{
         padding: 5px;
         display: block;
@@ -617,17 +604,18 @@ footer p{
     .content .nosotros-container .div1{
         width: 100%;
         min-height: 600px;
+        min-width: 350px;
         margin: 0;
     }
 
     .content .nosotros-container .div2{
         width: 100%;
-        min-width: 100px;
+        min-width: 350px;
     }
 
     .content .nosotros-container div{
-        width: 48%;
-        min-width: 100px;
+        width: 100%;
+        min-width: 350px;
     }
 
     footer .footer-container div{
