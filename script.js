@@ -2,9 +2,6 @@ const menuBtn = document.getElementById('menu-btn')
 const header = document.getElementById('header')
 const headerContainer = document.getElementById('header-container')
 const links = document.getElementById('mobile-links')
-const linkItems = links.querySelectorAll('.link')
-const path = window.location.pathname.split("/").pop() || "index.html"
-
 
 window.addEventListener('scroll', () => {
   if (window.scrollY > 0) {
@@ -14,12 +11,16 @@ window.addEventListener('scroll', () => {
   }
 })
 
+const linkItems = links.querySelectorAll('.link');
+const path = window.location.pathname.replace(/\/$/, "") || "/";
+
 // Marcar enlace activo según la URL
 linkItems.forEach(link => {
-  if (link.getAttribute("href") === path) {
-    link.classList.add("active")
+  const href = link.getAttribute("href").replace(/\/$/, "") || "/";
+  if (href === path) {
+    link.classList.add("active");
   }
-})
+});
 
 // Botón menú
 function toggleMenu() {
@@ -42,7 +43,7 @@ presupuestoBtns.forEach((presupuestoBtn) => {
   // Estructura del formulario
   const getFormContent = () => `
     <button id="close-btn" class="close-btn">&times;</button>
-    <h1>Solicita tu presupuesto</h1>
+    <h2>Solicita tu presupuesto</h2>
     <p>Rellena el formulario y obtén tu presupuesto gratuito.</p>
     <div class="form-group">
       <label>Nombre completo: <input placeholder="Nombre y apellido" type="text" name="nombre_completo" required></label>

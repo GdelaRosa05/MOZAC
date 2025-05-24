@@ -114,10 +114,11 @@ p{
 }
 
 button{
-    width: 130px;
+    width: fit-content;
     height: 40px;
-    font-weight: 500;
-    font-size: 15px;
+    padding: 0 10px;
+    font-weight: 600;
+    font-size: clamp(0.8rem, 1vw, 1rem);
     background-color: var(--secondary-color);
     color: var(--primary-color);
     border: none;
@@ -128,6 +129,7 @@ button{
     position: relative;
     overflow: hidden;
     transition-duration: .3s;
+    min-width: 100px;
 }
 
 button:hover{
@@ -135,7 +137,7 @@ button:hover{
 }
 
 button::before {
-    width: 130px;
+    width: 100%;
     height: 130px;
     position: absolute;
     content: "";
@@ -344,13 +346,13 @@ header ul li:hover{
 
 .content .container-contacto .box h3{
     margin-top: 10px;
-    font-size: clamp(1.3rem, 1vw, 1.875rem);
+    font-size: clamp(1.1rem, 1vw, 1.8rem);
     font-weight: 800;
     margin-bottom: 10px;
 }
 
 .content .container-contacto .box p{
-    font-size: clamp(1rem, 1vw, 1.2rem) !important;
+    font-size: clamp(0.8rem, 1vw, 1.2rem) !important;
     color: var(--neutral2);
     margin: 10px 0;
 }
@@ -403,12 +405,12 @@ header ul li:hover{
     display: flex;
     flex-direction: column;
     font-weight: 600;
-    font-size: 16px;
+    font-size: clamp(0.8rem, 0.7vw, 1rem);
 }
 
 .div5 form label input{
     padding: 10px;
-    font-size: 15px;
+    font-size: clamp(0.8rem, 0.7vw, 1rem);
     color: var(--neutral2);
     width: 100%;
     border: 1px solid black;
@@ -562,19 +564,6 @@ footer p{
         z-index: 4;
     }
 
-    .content .container{
-        width: 90%;
-        max-width: 90%;
-        display: flex;
-        flex-direction: column;
-        gap: 20px;
-    }
-
-    .content .container div {
-    grid-area: unset;
-    width: 100%;
-  }
-
     header svg{
         padding: 5px;
         display: block;
@@ -610,7 +599,7 @@ footer p{
     .content .container-contacto {
     grid-template-columns: 1fr 1fr;
     grid-template-rows: auto;
-    width: 80%;
+    width: 90%;
   }
 
   .div5 {
@@ -619,12 +608,15 @@ footer p{
     padding: 0;
     margin-bottom: 40px;
     width: 100%;
-    min-width: none;
+    min-width: 0;
+    display: flex;
+    justify-content: center;
   }
 
   .div5 form{
     width: 100%;
     min-width: 0;
+    max-width: 500px;
   }
 
   .div1 {
