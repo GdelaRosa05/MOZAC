@@ -295,7 +295,7 @@ header ul li:hover{
     width: 100vw;
     height: calc(fit-content - 100px);
     display: flex;
-    background-image: url('img/portada.png');
+    background-image: url('img/portada.webp');
     background-size: 37% 100%;
     background-position: right top;
     background-repeat: no-repeat;
@@ -589,7 +589,7 @@ body.no-scroll {
 
 .div1 { 
     grid-area: 1 / 1 / 3 / 4;
-    background-image: url('img/reforma.jpg'); 
+    background-image: url('img/reforma.webp'); 
     position: relative;
     display: flex;
     align-items: end;
@@ -642,7 +642,7 @@ body.no-scroll {
 
 .div3 { 
     grid-area: 3 / 1 / 6 / 3;
-    background-image: url('img/interior.jpg'); 
+    background-image: url('img/interior.webp'); 
     position: relative;
     display: flex;
     align-items: end;
@@ -666,7 +666,7 @@ body.no-scroll {
 
 .div4 { 
     grid-area: 3 / 3 / 6 / 6; 
-    background-image: url('img/obras.jpg'); 
+    background-image: url('img/obras.webp'); 
     background-size: cover;
     background-position: center;
     background-repeat: no-repeat;

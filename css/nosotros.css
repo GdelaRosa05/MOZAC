@@ -289,7 +289,7 @@ header ul li:hover{
     width: 100%;
     display: flex;
     justify-content: center;
-    background-image: url(../img/nosotros.jpg);
+    background-image: url(../img/nosotros.webp);
     background-size: cover;
     background-position: 50% 70%;
     position: relative;
@@ -358,7 +358,7 @@ header ul li:hover{
 
 .div1{
     grid-area: 1 / 1 / 7 / 5;
-    background-image: url(../img/padre.JPG);
+    background-image: url(../img/padre.webp);
     background-size: cover; 
     background-position: center;
     margin-right: 10px;

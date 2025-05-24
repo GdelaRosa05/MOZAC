@@ -284,7 +284,7 @@ header ul li:hover{
     width: 100%;
     display: flex;
     justify-content: center;
-    background-image: url(../img/servicios-bg.jpg);
+    background-image: url(../img/servicios-bg.webp);
     background-size: cover;
     background-position: 50% 80%;
     position: relative;
@@ -354,7 +354,7 @@ header ul li:hover{
 
 .div1 { 
     grid-area: 1 / 1 / 7 / 5; 
-    background-image: url(../img/rehabilitacion.png);
+    background-image: url(../img/rehabilitacion.webp);
     background-size: cover;
     background-position: center;
 }
@@ -366,7 +366,7 @@ header ul li:hover{
 
 .div3 { 
     grid-area: 7 / 3 / 13 / 7; 
-    background-image: url(../img/interiores.jpg); 
+    background-image: url(../img/interiores.webp); 
     background-size: cover;
     background-position: center;
 }
@@ -378,7 +378,7 @@ header ul li:hover{
 
 .div5 { 
     grid-area: 13 / 1 / 19 / 5; 
-    background-image: url(../img/obra.png);
+    background-image: url(../img/obra.webp);
     background-size: cover;
     background-position: center;
 }

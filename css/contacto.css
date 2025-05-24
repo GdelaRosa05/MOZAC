@@ -289,7 +289,7 @@ header ul li:hover{
     width: 100%;
     display: flex;
     justify-content: center;
-    background-image: url(../img/contacto.jpg);
+    background-image: url(../img/contacto.webp);
     background-size: cover;
     background-position: center;
     position: relative;
