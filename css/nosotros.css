@@ -509,6 +509,7 @@ footer .footer-container .contact-links svg{
 footer p{
     color: var(--neutral-light);
     margin-bottom: 20px;
+    text-align: center;
 }
 
 /*Home responsive mobile*/
