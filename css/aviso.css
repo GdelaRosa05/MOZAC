@@ -1,0 +1,67 @@
+/*Import font*/
+@import url('https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap');
+
+/*Reset CSS*/
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: "Inter", sans-serif;
+}
+
+:root{
+    --primary-color: white;
+    --secondary-color: black;
+    --neutral: rgb(36, 36, 36);
+    --neutral2: rgb(61, 61, 61);
+    --neutral-light: rgb(180, 180, 180);
+    --neutral-light2: rgb(220, 220, 220);
+    --link-active: rgba(255, 255, 255, 0.2);    
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+    font-family: 'Inter', sans-serif;
+    line-height: 1.6;
+    color: var(--neutral);
+    max-width: 900px;
+    margin: 0 auto;
+    padding: 20px;
+}
+
+h1 {
+    color: var(--secondary-color);
+    border-bottom: 2px solid var(--secondary-color);
+    padding-bottom: 10px;
+}
+
+h2 {
+    color: var(--secondary-color);
+    margin-top: 30px;
+}
+
+p {
+    margin-bottom: 15px;
+    font-weight: 600;
+}
+
+li{
+    list-style: none;
+    font-weight: 600;
+}
+
+.last-update {
+    font-style: italic;
+    color: var(--neutral);
+    text-align: right;
+}
+
+footer {
+    margin-top: 50px;
+    border-top: 1px solid var(--neutral);
+    padding-top: 20px;
+    font-size: 0.9em;
+}
