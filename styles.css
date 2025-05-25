@@ -523,8 +523,12 @@ body.no-scroll {
 
 .presupuesto-form.delivered{
     position: fixed;
-    padding: 20px;
-    padding-top: 60px;
+    padding: 40px;
+    padding-top: 80px;
+    min-height: 0;
+    height: fit-content;
+    min-width: 0;
+    width: fit-content;
 }
 
 .presupuesto-form .close-btn.delivered{
